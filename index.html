@@ -1,0 +1,336 @@
+<!DECTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>5チャレ：国語Quiz!</title>
+		<link rel="stylesheet" href="qcss.css">
+		<link rel="shortcut icon" href="favicon.ico">
+    <style>
+      body{
+	      background-color:#ffffff;
+      }
+      header{
+	      background-color:#ffccee;
+	      position: sticky;
+	      top: 0;
+	      padding: 0.5rem 1rem;
+	      display: flex;
+	      align-items: center;
+	      border-bottom: 1px solid #d1dce5;
+	      z-index: 999;
+      }
+      .test{
+	      color:#eba3ff;
+      }
+      .footer{
+      	background:#e8e8e8;
+      	height:300px;
+      }
+      hr{
+	      border: 3px dashed #ffccee;
+    	  background-color:#f6f6f6;
+      }
+      .timer{
+      }
+    </style>
+	</head>
+	
+	<header>
+		<h1>5チャレ-<span id="QText0"></span>問漢字読みクイズ: 残り<span id="Timer"></span>秒</h1>
+	</header>
+	
+	<body>
+		<div class="body">
+</--問題一問目-->
+			<p>「境内」なんと読む？</p>
+			<p>あなたの回答:<span id="a0"></span></p>
+			<p>解答欄<br>
+			<input type="text" id="Anser0" size="15"/>
+			<input type="button" value="回答" onclick="check(0)"/>
+			<hr>
+</--問題二問目-->
+			<p>「遡る」なんと読む？</p>
+			<p>あなたの回答:<span id="a1"></span></p>
+			<p>解答欄<br>
+			<input type="text" id="Anser1" size="15"/>
+			<input type="button" value="回答" onclick="check(1)"/>
+			<hr>
+</--問題三問目-->
+			<p>「大字」なんと読む？※「だいじ」ではない。</p>
+			<p>あなたの回答:<span id="a2"></span></p>
+			<p>解答欄<br>
+			<input type="text" id="Anser2" size="15"/>
+			<input type="button" value="回答" onclick="check(2)"/>
+			<hr>
+</--問題四問目-->
+			<p>「雄弁」なんと読む？</p>
+			<p>あなたの回答:<span id="a3"></span></p>
+			<p>解答欄<br>
+			<input type="text" id="Anser3" size="15"/>
+			<input type="button" value="回答" onclick="check(3)"/>
+			<hr>
+</--問題五問目-->
+			<p>「雰囲気」なんと読む？</p>
+			<p>あなたの回答:<span id="a4"></span></p>
+			<p>解答欄<br>
+			<input type="text" id="Anser4" size="15"/>
+			<input type="button" value="回答" onclick="check(4)"/>
+			<hr>
+</--問題六問目-->
+			<p>「手綱」なんと読む？</p>
+			<p>あなたの回答:<span id="a5"></span></p>
+			<p>解答欄<br>
+			<input type="text" id="Anser5" size="15"/>
+			<input type="button" value="回答" onclick="check(5)"/>
+			<hr>
+</--問題七問目-->
+			<p>「眉根」なんと読む？</p>
+			<p>あなたの回答:<span id="a6"></span></p>
+			<p>解答欄<br>
+			<input type="text" id="Anser6" size="15"/>
+			<input type="button" value="回答" onclick="check(6)"/>
+			<hr>
+</--問題八問目-->
+			<p>「嘆願」なんと読む？</p>
+			<p>あなたの回答:<span id="a7"></span></p>
+			<p>解答欄<br>
+			<input type="text" id="Anser7" size="15"/>
+			<input type="button" value="回答" onclick="check(7)"/>
+			<hr>
+</--問題九問目-->
+			<p>「磔刑」なんと読む？</p>
+			<p>あなたの回答:<span id="a8"></span></p>
+			<p>解答欄<br>
+			<input type="text" id="Anser8" size="15"/>
+			<input type="button" value="回答" onclick="check(8)"/>
+			<hr>
+</--問題十問目-->
+			<p>「嘲る」なんと読む？</p>
+			<p>あなたの回答:<span id="a9"></span></p>
+			<p>解答欄<br>
+			<input type="text" id="Anser9" size="15"/>
+			<input type="button" value="回答" onclick="check(9)"/>
+			<hr>
+</--問題十一問目-->
+			<p>「面目躍如」なんと読む？</p>
+			<p>あなたの回答:<span id="a10"></span></p>
+			<p>解答欄<br>
+			<input type="text" id="Anser10" size="15"/>
+			<input type="button" value="回答" onclick="check(10)"/>
+			<hr>
+</--問題十二問目-->
+			<p>「吟味」なんと読む？</p>
+			<p>あなたの回答:<span id="a11"></span></p>
+			<p>解答欄<br>
+			<input type="text" id="Anser11" size="15"/>
+			<input type="button" value="回答" onclick="check(11)"/>
+			<hr>
+</--問題十三問目-->
+			<p>「歩合」なんと読む？</p>
+			<p>あなたの回答:<span id="a12"></span></p>
+			<p>解答欄<br>
+			<input type="text" id="Anser12" size="15"/>
+			<input type="button" value="回答" onclick="check(12)"/>
+			<hr>
+</--問題十四問目-->
+			<p>「福音」なんと読む？</p>
+			<p>あなたの回答:<span id="a13"></span></p>
+			<p>解答欄<br>
+			<input type="text" id="Anser13" size="15"/>
+			<input type="button" value="回答" onclick="check(13)"/>
+			<hr>
+</--問題十五問目-->
+			<p>「啓上」なんと読む？</p>
+			<p>あなたの回答:<span id="a14"></span></p>
+			<p>解答欄<br>
+			<input type="text" id="Anser14" size="15"/>
+			<input type="button" value="回答" onclick="check(14)"/>
+			<hr>
+</--問題十六問目-->
+			<p>「月極」なんと読む？</p>
+			<p>あなたの回答:<span id="a15"></span></p>
+			<p>解答欄<br>
+			<input type="text" id="Anser15" size="15"/>
+			<input type="button" value="回答" onclick="check(15)"/>
+			<hr>
+</--問題十七問目-->
+			<p>「厳つい」なんと読む？</p>
+			<p>あなたの回答:<span id="a16"></span></p>
+			<p>解答欄<br>
+			<input type="text" id="Anser16" size="15"/>
+			<input type="button" value="回答" onclick="check(16)"/>
+			<hr>
+</--回答データ-->
+			<p>正当数：<span id="AText0"></span>/<span id="QText1"></span>(<span id="AText1"></span>%)</p>
+			<hr>
+		</div>
+		<div class="footer">
+			<p>制作：渡辺、李</p>
+			<p>コード：渡辺</p>
+			<p>問題：李</p>
+			<p>協力してくれた人</p>
+			<p>・磯山さん・福田さん</p>
+	   </div>
+	</body>
+</html>
+<script>
+function check(num){
+	if(num==0){
+		const A = document.getElementById("Anser0").value;
+		document.getElementById("a0").textContent = A;
+		if(A==="けいだい"){
+			alert("正解です");
+		}else if(A!==""){
+			alert("不正解です");
+		}
+	}if(num==1){
+		const A = document.getElementById("Anser1").value;
+		document.getElementById("a1").textContent = A;
+		if(A==="さかのぼる"||A==="さかのぼ"){
+			alert("正解です");
+		}else if(A!==""){
+	 		alert("不正解です");
+		}
+	}if(num==2){
+		const A = document.getElementById("Anser2").value;
+		document.getElementById("a2").textContent = A;
+		if(A==="おおあざ"){
+			alert("正解です");
+		}else if(A!==""){
+	 		alert("不正解です");
+		}
+	}if(num==3){
+		const A = document.getElementById("Anser3").value;
+		document.getElementById("a3").textContent = A;
+		if(A==="ゆうべん"){
+			alert("正解です");
+		}else if(A!==""){
+ 			alert("不正解です");
+		}
+	}if(num==4){
+		const A = document.getElementById("Anser4").value;
+		document.getElementById("a4").textContent = A;
+		if(A==="ふんいき"){
+			alert("正解です");
+		}else if(A!==""){
+			alert("不正解です");
+		}
+	}if(num==5){
+		const A = document.getElementById("Anser5").value;
+		document.getElementById("a5").textContent = A;
+		if(A==="たづな"){
+			alert("正解です");
+		}else if(A!==""){
+			alert("不正解です");
+		}
+	}if(num==6){
+		const A = document.getElementById("Anser6").value;
+		document.getElementById("a6").textContent = A;
+		if(A==="まゆね"){
+			alert("正解です");
+		}else if(A!==""){
+			alert("不正解です");
+		}
+	}if(num==7){
+		const A = document.getElementById("Anser7").value;
+		document.getElementById("a7").textContent = A;
+		if(A==="たんがん"){
+			alert("正解です");
+		}else if(A!==""){
+			alert("不正解です");
+		}
+	}if(num==8){
+		const A = document.getElementById("Anser8").value;
+		document.getElementById("a8").textContent = A;
+		if(A==="たっけい"){
+			alert("正解です");
+		}else if(A!==""){
+	 		alert("不正解です");
+		}
+	}if(num==9){
+		const A = document.getElementById("Anser9").value;
+		document.getElementById("a9").textContent = A;
+		if(A==="あざける"||A==="あざけ"){
+			alert("正解です");
+		}else if(A!==""){
+	 		alert("不正解です");
+		}
+	}if(num==10){
+		const A = document.getElementById("Anser10").value;
+		document.getElementById("a10").textContent = A;
+		if(A==="めんもくやくじょ"){
+			alert("正解です");
+		}else if(A!==""){
+		alert("不正解です");
+		}
+	}if(num==11){
+		const A = document.getElementById("Anser11").value;
+		document.getElementById("a11").textContent = A;
+		if(A==="ぎんみ"){
+			alert("正解です");
+		}else if(A!==""){
+		 	alert("不正解です");
+		}
+	}if(num==12){
+		const A = document.getElementById("Anser12").value;
+		document.getElementById("a12").textContent = A;
+		if(A==="ぶあい"){
+			alert("正解です");
+		}else if(A!==""){
+		 	alert("不正解です");
+		}
+	}if(num==13){
+		const A = document.getElementById("Anser13").value;
+		document.getElementById("a13").textContent = A;
+		if(A==="ふくいん"){
+			alert("正解です");
+		}else if(A!==""){
+		 	alert("不正解です");
+		}
+	}if(num==14){
+		const A = document.getElementById("Anser14").value;
+		document.getElementById("a14").textContent = A;
+		if(A==="けいじょう"){
+			alert("正解です");
+		}else if(A!==""){
+		 	alert("不正解です");
+		}
+	}if(num==15){
+		const A = document.getElementById("Anser15").value;
+		document.getElementById("a15").textContent = A;
+		if(A==="つきぎめ"){
+			alert("正解です");
+		}else if(A!==""){
+		 	alert("不正解です");
+		}
+	}if(num==16){
+		const A = document.getElementById("Anser16").value;
+		document.getElementById("a16").textContent = A;
+		if(A==="いか"||A==="いかつい"){
+			alert("正解です");
+		}else if(A!==""){
+		 	alert("不正解です");
+		}
+	}
+}
+var start = 0;
+var timer = 30000;
+var time = 0;
+window.addEventListener('DOMContentLoaded', function(){
+/*0.001秒ごとに実行**/
+setInterval(() => {
+	var qa = 0;
+	var per = 0;
+	var q = 17;
+	const coe = 100/q;
+	var A = document.getElementById("Anser0").value;
+	if(A==="けいだい")qa ++;
+		var A = document.getElementById("Anser1").value;
+		if(A==="さかのぼる"||A==="さかのぼ")qa ++;
+		var A = document.getElementById("Anser2").value;
+		if(A==="おおあざ")qa ++;
+		var A = document.getElementById("Anser3").value;
+		if(A==="ゆうべん")qa ++;
+		var A = document.getElementById("Anser4").value;
+		if(A==="ふんいき")qa ++;
+		var A = document.getE
