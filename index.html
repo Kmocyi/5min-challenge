@@ -333,4 +333,48 @@ setInterval(() => {
 		if(A==="ゆうべん")qa ++;
 		var A = document.getElementById("Anser4").value;
 		if(A==="ふんいき")qa ++;
-		var A = document.getE
+		var A = document.getElementById("Anser5").value;
+		if(A==="たづな")qa ++;
+		var A = document.getElementById("Anser6").value;
+		if(A==="まゆね")qa ++;
+		var A = document.getElementById("Anser7").value;
+		if(A==="たんがん")qa ++;
+		var A = document.getElementById("Anser8").value;
+		if(A==="たっけい")qa ++;
+		var A = document.getElementById("Anser9").value;
+		if(A==="あざける"||A==="あざけ")qa ++;
+		var A = document.getElementById("Anser10").value;
+		if(A==="めんもくやくじょ")qa ++;
+		var A = document.getElementById("Anser11").value;
+		if(A==="ぎんみ")qa ++;
+		var A = document.getElementById("Anser12").value;
+		if(A==="ぶあい")qa ++;
+		var A = document.getElementById("Anser13").value;
+		if(A==="ふくいん")qa ++;
+		var A = document.getElementById("Anser14").value;
+		if(A==="けいじょう")qa ++;
+		var A = document.getElementById("Anser15").value;
+		if(A==="つきぎめ")qa ++;
+		var A = document.getElementById("Anser16").value;
+		if(A==="いか"||A==="いかつい")qa ++;
+		document.getElementById("AText0").textContent = qa;
+		per = (Math.round(coe*qa));
+		document.getElementById("AText1").textContent = per;
+		document.getElementById("QText0").textContent = q;
+		document.getElementById("QText1").textContent = q;
+		if (start==0){
+			alert("スタートです！");
+			start = 1
+		}
+		if (timer>0){
+			timer -=1;
+			time = timer/100;
+			document.getElementById("Timer").textContent = time;
+		}else{
+			alert(`終了です！正当数：${qa}/${q}(${per}%)`);
+			alert("制作：李、渡辺");
+			alert("協力：磯山さん、福田さん");
+		}
+	}, 10);
+});
+</script>
